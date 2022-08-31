@@ -1,0 +1,489 @@
+ @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); 
+
+ * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-attachment: fixed;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+
+h1 {
+  font-size: 6rem;
+}
+
+/* For the section of the error page */
+.notValid h1{
+  font-size: 60px;
+  padding-left: 50px;
+}
+.notValid h1 span{
+  font-size: 40px;
+  /* font-family: fantasy; */
+}
+.notValid p{
+  font-size: 30px;
+  padding-left: 70px;
+}
+
+
+/* For the weather section */
+.app {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  background-attachment: fixed;
+}
+
+
+.app:before {
+  content: "";
+  background: url(./image/sunset.jpeg) fixed no-repeat center center/cover;
+  /* background: url(./image/sunset.jpeg); */
+  /* min-height: 100%; */
+  /* background-repeat: no-repeat; */
+  /* background-attachment: fixed; */
+  /* background-position: center; */
+  /* background-size: cover; */
+  position: absolute;
+  width: 100%;
+  height: 103%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.app .search {
+  text-align: center;
+  padding: 1rem;
+}
+
+.app input {
+  padding: .7rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  border: 1px solid rgba(255,255,255, 0.8);
+  background: rgba(255,255,255, 0.1);
+  color: #f8f8f8;
+} 
+
+::placeholder {
+  color: #f8f8f8;
+}
+
+.app .icon{
+  padding: 10px 8px;
+}
+/* 
+.app .search {
+  font-size: 10px;
+} */
+.container {
+  max-width: 700px;
+  height: 700px;
+  margin: auto;
+  padding: 0 1rem;
+  position: relative;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.app .top {
+  width: 100%;
+  /* margin: 1rem auto; */
+  margin: 16px auto;
+  padding: 20px;
+  margin-bottom: 50px;
+  border-radius: 25px;
+  background-color: rgba(255,255,255, 0.2);
+}
+
+/* .app .top .top-style{
+  display: flex;
+  width: 110%;
+  height: 110%;
+  margin: 16px auto;
+  padding: 20px;
+  margin-bottom: 50px;
+  border-radius: 20px;
+  background-color: rgba(255,255,255, 0.2);
+} */
+
+.app .description {
+  position: relative;
+  right: 100%;
+  transform-origin: 0 0;
+  transform: rotate(269deg);
+}
+
+.app .few-Description {
+   position: relative;
+   right: -90%;
+   top: -5%;
+   font-size: 10px;
+   font-weight: 500;
+   transform-origin: 0 0;
+   transform: rotate(269deg);
+}
+
+/* .app .bottom-box{
+  display: flex;
+} */
+
+
+.app .bottom {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 100%;
+  margin: 1rem auto;
+  padding: 1rem;
+  margin-bottom: 50px;
+  border-radius: 12px;
+  background-color: rgba(255,255,255, 0.2);
+}
+
+/* .app .second-bottom {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 100%;
+  margin: 1rem ;
+  padding: 1rem;
+  margin-bottom: 50px;
+  border-radius: 12px;
+  background-color: rgba(255,255,255, 0.2);
+} */
+
+.bold {
+  font-weight: 700;
+}
+
+
+
+/* Side Menu */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 10000px;
+  background-color: #E3E6F3;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  z-index: 999;
+  top: 0;
+  left: 0;
+}
+.menu-bar {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  cursor: pointer;
+  /* color: white !important; */
+  /* background-color: #f8f8f8; */
+  /* :hove   
+    opacity: 40%;
+  } */
+}
+
+/* .bar{
+  color: #f8f8f8;
+} */
+
+.sidenav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  /* background-color: #E3E6F3; */
+  background: linear-gradient(to right, rgb(24, 23, 28), rgb(8, 8, 28));
+  width: 0;
+  overflow: hidden;
+  transition: width 0.40s;
+  z-index: 2;
+}
+.increaseWidth {
+  width: 20vw;
+  transition: width 0.40s;
+}
+.close {
+  /* color: black; */
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  cursor: pointer;
+  padding-left: 20px;
+  padding-top: 20px;
+  /* :hover {
+    opacity: 40%;
+  } */
+}
+.opaque {
+  background-color: black;
+  opacity: 30%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.link{
+  color: #f8f8f8;
+  font-size: 8px;
+  font-weight: 100;
+}
+
+#navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#navbar li {
+  list-style: none;
+  padding: 0 20px;
+  position: relative;
+  padding-top: 20px;
+  border: #1a1a1a;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+
+#navbar li a {
+  text-decoration: none;
+  font-size: 36px;
+  font-weight: 600;
+  /* color: #1a1a1a; */
+  color: white;
+  border-bottom: 4px dotted;
+  
+  /* border-bottom-width: 10px; */
+  transition: 0.4s ease-in-out;
+}
+
+
+#navbar li a:hover{
+  color: blue;
+}
+
+/* #navbar li a.active::after, */
+#navbar li a:hover::after {
+  content: "";
+  /* width: 30%; */
+  height: 2px;
+  background-color: blue;
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
+}
+
+.button{
+  margin: 70px;
+  padding: 20px;
+}
+
+.logout-btn{
+  order: 2px solid #253858!important;
+    padding: 5px 10px!important;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 8px;
+    border-radius: 3px;
+    width: 200px;
+    cursor: pointer;
+    /* text-align: center; */
+    font-size: 30px;
+    /* background-color: #253858!important; */
+    /* background: linear-gradient(to right, rgb(24, 23, 28), rgb(8, 8, 28)) !important; */
+    background: linear-gradient(to right, rgb(156, 152, 169), rgb(8, 8, 28));;
+    color: #fff!important;
+}
+
+
+/* Loading page */
+.loading-message{background:#ECF0F1}
+
+.load{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);
+  /*change these sizes to fit into your project*/
+  width:100px;
+  height:100px;
+}
+.load hr{border:0;margin:0;width:40%;height:40%;position:absolute;border-radius:50%;animation:spin 2s ease infinite}
+
+.load :first-child{background:#19A68C;animation-delay:-1.5s}
+.load :nth-child(2){background:#F63D3A;animation-delay:-1s}
+.load :nth-child(3){background:#FDA543;animation-delay:-0.5s}
+.load :last-child{background:#193B48}
+
+@keyframes spin{
+  0%,100%{transform:translate(0)}
+  25%{transform:translate(160%)}
+  50%{transform:translate(160%, 160%)}
+  75%{transform:translate(0, 160%)}
+}
+
+
+
+
+
+/* For the Side Bar menu */
+@media (max-width: 768px) {
+  .increaseWidth{
+    width:  40vw;
+  }
+}
+
+@media (max-width: 820px) {
+  .increaseWidth{
+    width:  70vw;
+  }
+}
+
+@media (max-width: 844px) {
+  .header{
+    padding: 50px 200px;
+  }
+}
+
+
+@media (max-width: 844px) {
+  .logout-btn{
+    padding-left: 100px !important;
+    padding-right: 100px !important;
+    width: 250px !important;
+    height: 40px;
+    font-size: 70%;
+    font-weight: 900;
+  }
+}
+
+@media (max-width: 844px) {
+  .navbar li{
+    padding-right: 30px;
+  }
+}
+
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Outfit', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+h1 {
+  font-size: 6rem;
+}
+
+.app {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: rgba(0,0,0,0.4);
+  color: #fff;
+}
+
+.app:before {
+  content: '';
+  background: url('./assets/sunset.jpg') no-repeat center center/cover;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.app .search {
+  text-align: center;
+  padding: 1rem;
+}
+
+.app input {
+  padding: .7rem 1.5rem;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  border: 1px solid rgba(255,255,255, 0.8);
+  background: rgba(255,255,255, 0.1);
+  color: #f8f8f8;
+}
+
+::placeholder {
+  color: #f8f8f8;
+}
+
+.container {
+  max-width: 700px;
+  height: 700px;
+  margin: auto;
+  padding: 0 1rem;
+  position: relative;
+  top: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.app .top {
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.app .description {
+  position: relative;
+  right: -90%;
+  transform-origin: 0 0;
+  transform: rotate(269deg);
+}
+
+.app .bottom {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 100%;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: rgba(255,255,255, 0.2);
+}
+
+.bold {
+  font-weight: 700;
+}
+ */
